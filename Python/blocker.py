@@ -21,7 +21,9 @@ websites = [
 "reddit.com",
 "www.dsogaming.com","dsogaming.com",
 "www.gamemag.ru","gamemag.ru",
-"www.9gag.com","9gag.com"
+"www.9gag.com","9gag.com",
+"www.3dnews.ru","3dnews.ru",
+"www.phoronix.com","phoronix.com"
 ]
 
 
