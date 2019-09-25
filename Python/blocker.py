@@ -13,9 +13,16 @@ else:
     print('\tDetected Platform was',platform.system())
 
 redirect_path = "127.0.0.1"
-websites = ["www.facebook.com",
- "facebook.com", "twitter.com", "www.twitter.com",
- " youtube.com", "www.youtube.com"]
+websites = [
+"www.facebook.com",
+"facebook.com", "twitter.com", "www.twitter.com",
+"youtube.com", "www.youtube.com",
+"www.reddit.com",
+"reddit.com",
+"www.dsogaming.com","dsogaming.com",
+"www.gamemag.ru","gamemag.ru",
+"www.9gag.com","9gag.com"
+]
 
 
 def write_to_hosts_file(host_file_path, websites,redirect_path):
@@ -30,6 +37,7 @@ def write_to_hosts_file(host_file_path, websites,redirect_path):
                     pass
                 else:
                     file.write (redirect_path + " " + website + "\n")
+        print("Updated /etc/hosts \n")
 
 
 def unblock_hosts(host_file_path, websites, redirect_path):
@@ -46,15 +54,34 @@ def unblock_hosts(host_file_path, websites, redirect_path):
 
 # To make the script running all the time
 while True:
-    curr_hour = dt(dt.now().year, dt.now().month, dt.now().day,dt.now().hour, dt.now().minute)
+    curr_time = dt(dt.now().year, dt.now().month, dt.now().day,dt.now().hour, dt.now().minute)
 
-    time1 = dt(dt.now().year, dt.now().month, dt.now().day, 18)
-    time2 = dt(dt.now().year, dt.now().month, dt.now().day, 16)
-    print('curr_time is ', curr_hour)
-    print('time 1 is ', time1)
-    print('time 2 is ', time2)
+    time_allow_start_1 = dt(dt.now().year, dt.now().month, dt.now().day, 8)
+    time_allow_end_1 = dt(dt.now().year, dt.now().month, dt.now().day, 9,00)
+    print('curr_time is ', curr_time)
+    print('time 1 is ', time_allow_start_1)
+    print('time 2 is ', time_allow_end_1)
+    #time.sleep(10)
+    time_allow_start_3 = dt(dt.now().year, dt.now().month, dt.now().day, 20)
+    time_allow_end_3 = dt(dt.now().year, dt.now().month, dt.now().day, 21,00)
+
+    time_allow_start_2 = dt(dt.now().year, dt.now().month, dt.now().day, 16)
+    time_allow_end_2 = dt(dt.now().year, dt.now().month, dt.now().day, 17,00)
+
+
+    if time_allow_start_3 <curr_time< time_allow_end_3:
+        print('Allow time')
+        unblock_hosts(host_file_path, websites, redirect_path)
+    elif time_allow_start_2 <curr_time< time_allow_end_2:
+        print('Allow time')
+        unblock_hosts(host_file_path, websites, redirect_path)
+    elif time_allow_start_1 <curr_time< time_allow_end_1:
+        print('Allow time')
+        unblock_hosts(host_file_path, websites, redirect_path) 
+    else:
+        print('Block Time')
+        write_to_hosts_file(host_file_path, websites,redirect_path)
     time.sleep(10)
-    #if time1 <  time2:
         
     #     print("Time to block website!")
     #     # Open the hosts file
