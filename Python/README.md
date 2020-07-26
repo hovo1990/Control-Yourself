@@ -24,3 +24,15 @@ C:\Windows\System32\drivers\etc\hosts
 #### Try to open facebook now!
 
 ![image](https://user-images.githubusercontent.com/26179770/45574623-4490b080-b88e-11e8-940c-351f8f390964.png)
+
+
+## Cronjob add
+@reboot sleep 5 &&  /usr/bin/python3 /home/johngra190/GitSync/Creative_solutions/Control-Yourself/Python/blocker.py
+
+
+## check list
+crontab -l
+
+### check cron job 
+
+tail -f /var/log/syslog | grep --line-buffered cron
