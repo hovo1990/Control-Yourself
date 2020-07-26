@@ -64,14 +64,24 @@ while True:
     print('time 1 is ', time_allow_start_1)
     print('time 2 is ', time_allow_end_1)
     #time.sleep(10)
-    time_allow_start_3 = dt(dt.now().year, dt.now().month, dt.now().day, 20)
-    time_allow_end_3 = dt(dt.now().year, dt.now().month, dt.now().day, 21,00)
-
-    time_allow_start_2 = dt(dt.now().year, dt.now().month, dt.now().day, 16)
-    time_allow_end_2 = dt(dt.now().year, dt.now().month, dt.now().day, 17,00)
 
 
-    if time_allow_start_3 <curr_time< time_allow_end_3:
+    time_allow_start_2 = dt(dt.now().year, dt.now().month, dt.now().day, 12)
+    time_allow_end_2 = dt(dt.now().year, dt.now().month, dt.now().day, 13,00)
+
+
+    time_allow_start_3 = dt(dt.now().year, dt.now().month, dt.now().day, 16)
+    time_allow_end_3 = dt(dt.now().year, dt.now().month, dt.now().day, 17,00)
+
+
+    time_allow_start_4 = dt(dt.now().year, dt.now().month, dt.now().day, 20)
+    time_allow_end_4 = dt(dt.now().year, dt.now().month, dt.now().day, 21,00)
+
+
+    if time_allow_start_4 <curr_time< time_allow_end_4:
+        print('Allow time')
+        unblock_hosts(host_file_path, websites, redirect_path)
+    elif time_allow_start_3 <curr_time< time_allow_end_3:
         print('Allow time')
         unblock_hosts(host_file_path, websites, redirect_path)
     elif time_allow_start_2 <curr_time< time_allow_end_2:
