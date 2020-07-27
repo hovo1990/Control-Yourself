@@ -59,7 +59,7 @@ while True:
     curr_time = dt(dt.now().year, dt.now().month, dt.now().day,dt.now().hour, dt.now().minute)
 
     time_allow_start_1 = dt(dt.now().year, dt.now().month, dt.now().day, 8)
-    time_allow_end_1 = dt(dt.now().year, dt.now().month, dt.now().day, 9,00)
+    time_allow_end_1 = dt(dt.now().year, dt.now().month, dt.now().day, 10,00)
     print('curr_time is ', curr_time)
     print('time 1 is ', time_allow_start_1)
     print('time 2 is ', time_allow_end_1)
